@@ -12,7 +12,7 @@ API also returns height in decimeters and weight in hectograms for some reason. 
 Notes for immediate future features:
 - Pagination to list only 25 pokemon per page, such as on the route /types/:type which currently lists ALL pokemon of that type, or on abilities/:ability
 
--Suggested pokemon in search bar when searching probably via find method to find a string that matches any pokemon name from endpoint `https://pokeapi.co/api/v2/pokemon`
+- Suggested pokemon in search bar when searching probably via find method to find a string that matches any pokemon name from endpoint `https://pokeapi.co/api/v2/pokemon`
 
 
 This project was built using React router v6, i know v7 exists but I just learned about v6 and wanted to flex my skills in it to apply what I've learned.
