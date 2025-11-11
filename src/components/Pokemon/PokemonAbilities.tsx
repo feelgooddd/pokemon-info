@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import type { PokemonDetails } from "../types/PokemonDetails";
-import { firstCharToUpper } from "../utils/helpers";
+import type { PokemonDetails } from "../../types/PokemonDetails";
+import { firstCharToUpper } from "../../utils/helpers";
 
 interface PokemonAbilitiesProps {
   pokemonDetails: PokemonDetails;

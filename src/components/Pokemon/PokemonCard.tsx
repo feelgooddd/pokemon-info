@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { fetchPokemon } from "../utils/fetchers";
-import type { PokemonDetails } from "../types/PokemonDetails";
+import { fetchPokemon } from "../../utils/fetchers";
+import type { PokemonDetails } from "../../types/PokemonDetails";
 import PokemonAbilities from "./PokemonAbilities";
-import { firstCharToUpper, weightInLbs, heightInFtIn } from "../utils/helpers";
+import { firstCharToUpper, weightInLbs, heightInFtIn } from "../../utils/helpers";
 import PokemonTypes from "./PokemonTypes";
 import PokemonStats from "./PokemonStats";
 

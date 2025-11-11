@@ -1,5 +1,5 @@
-import type { PokemonDetails } from "../types/PokemonDetails";
-import { removeHyphen, firstCharToUpper } from "../utils/helpers";
+import type { PokemonDetails } from "../../types/PokemonDetails";
+import { removeHyphen, firstCharToUpper } from "../../utils/helpers";
 interface PokemonStatsProps {
   pokemonDetails: PokemonDetails;
 }
