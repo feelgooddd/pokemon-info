@@ -9,6 +9,11 @@ Throughout this project I had to learn how to create an interface(ultimately i d
 The helper functions were fun to write. I found myself removing hypens a lot, and uppercasing the first character often because the API returns stuff with spaces such as "clear body" as "clear-body" and names in all lowercase.
 API also returns height in decimeters and weight in hectograms for some reason. So there are helper functions to conver those as well.
 
+Notes for immediate future features:
+- Pagination to list only 25 pokemon per page, such as on the route /types/:type which currently lists ALL pokemon of that type, or on abilities/:ability
+
+-Suggested pokemon in search bar when searching probably via find method to find a string that matches any pokemon name from endpoint `https://pokeapi.co/api/v2/pokemon`
+
 
 This project was built using React router v6, i know v7 exists but I just learned about v6 and wanted to flex my skills in it to apply what I've learned.
 
