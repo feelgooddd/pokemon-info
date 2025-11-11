@@ -5,7 +5,6 @@ import MainLayout from "./layout/MainLayout";
 import PokemonCard from "./components/Pokemon/PokemonCard";
 import AbilityCard from "./components/Abilities/AbilityCard";
 import PokemonTypesCard from "./components/Types/PokemonTypesCard";
-import PokemonTypes from "./components/Pokemon/PokemonTypes";
 
 const App = () => {
   const [pokemon, setPokemon] = useState("");

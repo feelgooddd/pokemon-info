@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 import { firstCharToUpper } from "../../utils/helpers";
 import TypeRelationList from "../../types/TypeRelationList";
