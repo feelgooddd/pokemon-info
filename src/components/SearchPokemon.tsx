@@ -16,6 +16,7 @@ function SearchPokemon({ pokemon, setPokemon, setPokemonDetails }: SearchPokemon
       const data: PokemonDetails = await fetchPokemon(pokemon);
       setPokemonDetails(data); // update App state
       navigate(`/pokemon/${data.name}`, { state: data }); // navigate with route param & state
+      setPokemon("")
     } catch (err) {
       console.error(err);
       alert("Pokémon not found!");
