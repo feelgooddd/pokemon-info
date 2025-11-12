@@ -6,6 +6,7 @@ import PokemonAbilities from "./PokemonAbilities";
 import { firstCharToUpper, weightInLbs, heightInFtIn } from "../../utils/helpers";
 import PokemonTypes from "./PokemonTypes";
 import PokemonStats from "./PokemonStats";
+import PokemonTypesEffectiveness from "../Types/PokemonTypesEffectiveness";
 
 function PokemonCard() {
   const { id } = useParams();
@@ -67,7 +68,10 @@ useEffect(() => {
         )}
       </p>
       <p>Weight: {weightInLbs(pokemonDetails.weight)} lbs</p>
+
       <PokemonAbilities pokemonDetails={pokemonDetails} />
+      <PokemonTypesEffectiveness pokemonDetails={pokemonDetails} />
+
       <PokemonTypes pokemonDetails={pokemonDetails} />
       <PokemonStats pokemonDetails={pokemonDetails} />
     </div>
