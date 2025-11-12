@@ -3,7 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+h1,h2,h3{
+    font-family: "RaleWay", sans-serif;
+}
+p{
+  font-family: "Open Sans", sans-serif;
+}
 a{
   color: inherit
 }

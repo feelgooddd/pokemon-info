@@ -1,0 +1,1 @@
+*{margin:0;padding:0;box-sizing:border-box}h1,h2,h3{font-family:RaleWay,sans-serif}p{font-family:Open Sans,sans-serif}a{color:inherit}.search-area{display:flex;gap:5px;align-items:center;justify-content:center;border-bottom:1px dashed black;margin-inline:10px}.search-area input{text-align:center}.search-area input,.search-area button{padding:2px 4px;margin-block:5px}
