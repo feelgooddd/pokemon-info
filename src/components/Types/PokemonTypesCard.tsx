@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 import { firstCharToUpper } from "../../utils/helpers";
 import TypeRelationList from "../../types/TypeRelationList";
+import Pagination from "../Pagination";
 interface TypeDetails {
   damage_relations: {
     double_damage_from: { name: string }[];
@@ -21,6 +22,10 @@ function PokemonTypesCard() {
 
   const [typeDetails, setTypeDetails] = useState<TypeDetails | null>(null);
   const [loading, setLoading] = useState(true);
+
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const pokemonPerPage = 10;
 
   useEffect(() => {
     async function fetchTypeDetails() {
@@ -46,6 +51,11 @@ function PokemonTypesCard() {
   if (!typeDetails) return <p>Type not found.</p>;
 
   const { damage_relations, pokemon } = typeDetails;
+
+  // Pagination logic
+  const indexOfLast = currentPage * pokemonPerPage;
+  const indexOfFirst = indexOfLast - pokemonPerPage;
+  const currentPokemon = pokemon.slice(indexOfFirst, indexOfLast);
 
   return (
     <div style={{ padding: "16px" }}>
@@ -82,7 +92,7 @@ function PokemonTypesCard() {
 
       <section style={{ marginTop: "24px" }}>
         <h3>Pokémon with this type:</h3>
-        {pokemon.map((p) => (
+        {currentPokemon.map((p) => (
           <Link
             key={p.pokemon.name}
             to={`/pokemon/${p.pokemon.name}`}
@@ -91,6 +101,14 @@ function PokemonTypesCard() {
             {p.pokemon.name}
           </Link>
         ))}
+
+        {/*  Pagination controls */}
+        <Pagination
+          currentPage={currentPage}
+          totalItems={pokemon.length}
+          itemsPerPage={pokemonPerPage}
+          onPageChange={setCurrentPage}
+        />
       </section>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { removeHyphen, firstCharToUpper } from "../../utils/helpers";
-
+import Pagination from "../Pagination";
 interface PokemonSummary {
   pokemon: { name: string; url: string };
   is_hidden: boolean;
@@ -20,7 +20,11 @@ function AbilityCard() {
   const { name } = useParams<{ name: string }>();
   const [ability, setAbility] = useState<AbilityDetails | null>(null);
   const [loading, setLoading] = useState(true);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const pokemonPerPage = 10;
+  const indexOfLast = currentPage * pokemonPerPage;
+const indexOfFirst = indexOfLast - pokemonPerPage;
+const currentPokemon = ability?.pokemon.slice(indexOfFirst, indexOfLast);
   useEffect(() => {
     const fetchAbility = async () => {
       if (!name) return;
@@ -51,16 +55,22 @@ function AbilityCard() {
 
       <h3>Pokémon with this ability:</h3>
       <div>
-        {ability.pokemon.map((p) => (
-          <Link
-            key={p.pokemon.name}
-            to={`/pokemon/${p.pokemon.name}`}
-            style={{ display: "block", marginBottom: "4px" }}
-          >
-            {p.pokemon.name}
-          </Link>
-        ))}
+{currentPokemon?.map((p) => (
+  <Link
+    key={p.pokemon.name}
+    to={`/pokemon/${p.pokemon.name}`}
+    style={{ display: "block", marginBottom: "4px" }}
+  >
+    {p.pokemon.name}
+  </Link>
+))}
       </div>
+      <Pagination
+  currentPage={currentPage}
+  totalItems={ability.pokemon.length}
+  itemsPerPage={pokemonPerPage}
+  onPageChange={setCurrentPage}
+/>
     </div>
   );
 }
