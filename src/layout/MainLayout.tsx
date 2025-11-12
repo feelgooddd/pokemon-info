@@ -20,6 +20,9 @@ function MainLayout({ pokemon, setPokemon, setPokemonDetails }: MainLayoutProps)
 
       {/* Page content */}
       <Outlet />
+
+      {/* Temporary Foot */}
+      <footer style={{ width: "fit-content", marginInline: "auto"}}> Ryan Goods 2025</footer>
     </div>
   );
 }
